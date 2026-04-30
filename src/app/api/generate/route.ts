@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
     const matchedTexts = matches.map((m) => m.text);
 
     const message = await anthropic.messages.create({
-      model: "claude-opus-4-6-20250530",
+      model: "claude-opus-4-20250514",
       max_tokens: 1024,
       system: SYSTEM_PROMPT,
       messages: [
