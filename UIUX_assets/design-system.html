@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Donald J Roster — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { padding: 40px 48px 80px; max-width: 1200px; margin: 0 auto; }
+  h1.t-h1 { margin: 0 0 8px; }
+  .ds-grid { display: grid; gap: 24px; grid-template-columns: repeat(12, 1fr); }
+  .col-6 { grid-column: span 6; }
+  .col-4 { grid-column: span 4; }
+  .col-3 { grid-column: span 3; }
+  .col-12 { grid-column: span 12; }
+  .swatch { height: 84px; border-radius: 4px; border: 1px solid var(--rule); position: relative; overflow: hidden; }
+  .swatch__lab { position: absolute; bottom: 6px; left: 8px; right: 8px; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .swatch__lab span:last-child { opacity: 0.7; }
+  .lab-section { padding: 18px; }
+  .type-row { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line-warm); }
+  .type-row:last-child { border-bottom: 0; }
+  .type-row .meta { width: 180px; }
+  @media (max-width: 900px) { .col-6, .col-4, .col-3 { grid-column: span 12; } }
+</style>
+</head>
+<body>
+
+<header style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap">
+  <div>
+    <div class="t-eyebrow">Donald J Roster · Design System</div>
+    <h1 class="t-h1">The Roast Lab Kit.</h1>
+    <p class="t-body" style="max-width:680px;margin-top:8px">
+      Original parody chrome built for an "insult laboratory" feel — campaign-poster typography,
+      hairline rules, classification stamps, and a warm ivory ground. No real platform branding
+      reproduced.
+    </p>
+  </div>
+  <a href="Trump Roast Lab.html" class="btn btn--ink" style="text-decoration:none">
+    ← Back to the Lab
+  </a>
+</header>
+
+<div class="classified-bar" style="margin-bottom: 32px">
+  <span>System Spec</span>
+  <span style="color:var(--red)">PARODY · INTERNAL USE</span>
+  <span>v0.4.0</span>
+</div>
+
+<!-- COLORS -->
+<section class="lab-section panel" style="margin-bottom:24px">
+  <div class="band" style="margin:-18px -18px 18px"><span class="band__num">01</span><span class="band__title">Color</span><span class="band__rule"></span></div>
+
+  <div class="ds-grid">
+    <div class="col-3">
+      <div class="swatch" style="background:var(--ivory)">
+        <div class="swatch__lab"><span>Ivory</span><span>#F4EFE6</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Page ground. Warm off-white.</p>
+    </div>
+    <div class="col-3">
+      <div class="swatch" style="background:var(--paper)">
+        <div class="swatch__lab"><span>Paper</span><span>#FBF7F0</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Card surface.</p>
+    </div>
+    <div class="col-3">
+      <div class="swatch" style="background:var(--bone)">
+        <div class="swatch__lab"><span>Bone</span><span>#ECE6D7</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Section bands, secondary fills.</p>
+    </div>
+    <div class="col-3">
+      <div class="swatch" style="background:var(--ink)">
+        <div class="swatch__lab" style="color:#fff"><span>Ink</span><span>#0E1116</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Primary text + ink button.</p>
+    </div>
+
+    <div class="col-3">
+      <div class="swatch" style="background:var(--navy)">
+        <div class="swatch__lab" style="color:#fff"><span>Navy</span><span>#0E2238</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Authority. Dossier marks.</p>
+    </div>
+    <div class="col-3">
+      <div class="swatch" style="background:var(--red)">
+        <div class="swatch__lab" style="color:#fff"><span>Campaign Red</span><span>#B22234</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Primary action. Stamps.</p>
+    </div>
+    <div class="col-3">
+      <div class="swatch" style="background:var(--gold)">
+        <div class="swatch__lab" style="color:#fff"><span>Muted Gold</span><span>#B8893A</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Accent. Highlight, emphasis.</p>
+    </div>
+    <div class="col-3">
+      <div class="swatch" style="background:var(--rule)">
+        <div class="swatch__lab" style="color:#fff"><span>Rule</span><span>#1F2733</span></div>
+      </div>
+      <p class="t-meta" style="margin-top:6px">Hairline borders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TYPE -->
+<section class="lab-section panel" style="margin-bottom:24px">
+  <div class="band" style="margin:-18px -18px 18px"><span class="band__num">02</span><span class="band__title">Type</span><span class="band__rule"></span></div>
+
+  <div class="ds-grid">
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 8px">Display · Newsreader Italic</p>
+      <div class="t-h1">The Insult Laboratory.</div>
+      <p class="t-meta" style="margin-top:8px">Used sparingly — title pieces and parody display moments.</p>
+    </div>
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 8px">Display · Newsreader Roman</p>
+      <div class="t-h2">Friend Dossier Intake</div>
+      <p class="t-meta" style="margin-top:8px">Section-level titles. Editorial weight.</p>
+    </div>
+    <div class="col-12">
+      <hr class="hr"/>
+      <div class="type-row"><span class="meta t-meta">Inter Tight 600 / 20</span><span class="t-h3">Live Roast Output</span></div>
+      <div class="type-row"><span class="meta t-meta">Inter Tight 400 / 14.5</span><span class="t-body">Body copy uses Inter Tight at 14.5px / 1.5 line-height for clarity in the dense lab UI.</span></div>
+      <div class="type-row"><span class="meta t-meta">JetBrains Mono / 11 caps</span><span class="t-stamp">Classification · file no. 5305</span></div>
+      <div class="type-row"><span class="meta t-meta">JetBrains Mono / 11.5</span><span class="t-meta">Mono is reserved for metadata, archive snippets, and lab diagnostics.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section class="lab-section panel" style="margin-bottom:24px">
+  <div class="band" style="margin:-18px -18px 18px"><span class="band__num">03</span><span class="band__title">Components</span><span class="band__rule"></span></div>
+
+  <div class="ds-grid">
+
+    <!-- Buttons -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Buttons</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn btn--primary btn--lg">Generate Roast</button>
+        <button class="btn btn--ink">Export Image</button>
+        <button class="btn">Regenerate</button>
+        <button class="btn btn--ghost">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Stamps -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Stamps</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+        <span class="stamp stamp--red">Parody · Satire</span>
+        <span class="stamp stamp--navy">Classified</span>
+        <span class="stamp stamp--gold">Analyzed</span>
+      </div>
+    </div>
+
+    <!-- Chips -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Chips</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span class="chip">plays tennis</span>
+        <span class="chip chip--on">low energy</span>
+        <span class="chip">fake genius</span>
+        <span class="chip chip--gold">brutal</span>
+        <span class="chip">coffee addict</span>
+      </div>
+    </div>
+
+    <!-- Segmented -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Segmented Control</p>
+      <div class="seg">
+        <button class="seg__btn seg__btn--on">Roster Post</button>
+        <button class="seg__btn">Truthful Social</button>
+      </div>
+    </div>
+
+    <!-- Inputs -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Input</p>
+      <div class="field">
+        <label class="field__label">Subject Name</label>
+        <input class="input" placeholder="e.g. Marcus Lindgren" value="Marcus Lindgren"/>
+        <span class="field__hint">First or full name. Required.</span>
+      </div>
+    </div>
+
+    <!-- Slider -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Tick Slider</p>
+      <div class="slider-wrap">
+        <input type="range" class="slider" min="1" max="10" value="7"/>
+        <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10px;color:var(--ink-mute);letter-spacing:0.14em;text-transform:uppercase;margin-top:2px">
+          <span>mild</span><span>medium</span><span>spicy</span><span>scorched</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section band -->
+    <div class="col-12">
+      <p class="t-eyebrow" style="margin:0 0 10px">Section Band</p>
+      <div style="border:1px solid var(--rule);border-radius:8px;overflow:hidden">
+        <div class="band">
+          <span class="band__num">02</span>
+          <span class="band__title">Live Roast Output</span>
+          <span class="band__rule"></span>
+          <span class="t-stamp" style="color:var(--gold)">● ANALYZED</span>
+        </div>
+        <div style="padding:14px;color:var(--ink-mute);font-family:var(--font-mono);font-size:11.5px">[ panel content area ]</div>
+      </div>
+    </div>
+
+    <!-- Classified bar -->
+    <div class="col-12">
+      <p class="t-eyebrow" style="margin:0 0 10px">Classification Bar</p>
+      <div class="classified-bar">
+        <span>Classification</span>
+        <span style="color:var(--red)">PARODY · INTERNAL USE</span>
+        <span>File No. 5305</span>
+      </div>
+    </div>
+
+    <!-- Placeholder stripe -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Image Placeholder</p>
+      <div class="placeholder-stripe" style="height:120px">[ subject photo · drop here ]</div>
+    </div>
+
+    <!-- Post card preview -->
+    <div class="col-6">
+      <p class="t-eyebrow" style="margin:0 0 10px">Post Card · Mini</p>
+      <div class="post-card">
+        <div style="display:flex;gap:10px;align-items:center">
+          <div style="width:36px;height:36px;background:var(--navy);border-radius:50%"></div>
+          <div>
+            <div style="font-weight:700;font-size:13px">Donald J. Trump</div>
+            <div class="t-meta">@realDonaldTrump · now</div>
+          </div>
+        </div>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.4">Sleepy Subject — totally a disaster. SAD!</p>
+        <div style="margin-top:10px"><span class="stamp stamp--red">Parody</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USAGE -->
+<section class="lab-section panel" style="margin-bottom:24px">
+  <div class="band" style="margin:-18px -18px 18px"><span class="band__num">04</span><span class="band__title">Usage Notes</span><span class="band__rule"></span></div>
+  <div class="ds-grid">
+    <div class="col-4">
+      <p class="t-eyebrow">Color Discipline</p>
+      <p class="t-body">Ivory + ink for 90% of surface. Red is reserved for primary action and parody stamps. Gold is a single-use accent — never two golds in one band.</p>
+    </div>
+    <div class="col-4">
+      <p class="t-eyebrow">Type Rhythm</p>
+      <p class="t-body">Mono = metadata. Sans = UI. Display italic = parody display moments only. Body copy never wider than 70ch.</p>
+    </div>
+    <div class="col-4">
+      <p class="t-eyebrow">Parody Hygiene</p>
+      <p class="t-body">Every roast surface carries a visible <span class="stamp stamp--red">PARODY</span> stamp. Avatar is original line art. No real platform marks.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="t-meta" style="text-align:center;margin-top:32px">
+  Donald J Roster · Design System v0.4.0 · all imagery and language are original parody work
+</footer>
+
+</body>
+</html>

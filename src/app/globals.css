@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Newsreader:ital,wght@1,400;1,600;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --color-ivory: #F4EFE6;
+  --color-paper: #FBF7F0;
+  --color-bone: #ECE6D7;
+  --color-ink: #0E1116;
+  --color-ink-soft: #2A2F38;
+  --color-ink-mute: #6A6A66;
+  --color-navy: #0E2238;
+  --color-navy-deep: #081626;
+  --color-red: #B22234;
+  --color-red-deep: #8E1A28;
+  --color-gold: #B8893A;
+  --color-gold-soft: #D9B978;
+  --color-rule: #1F2733;
+  --color-line-warm: #D8CFB8;
+
+  --font-ui: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-display: "Newsreader", "Georgia", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
