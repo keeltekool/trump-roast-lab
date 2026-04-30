@@ -2,25 +2,6 @@
 
 import { useState } from "react";
 
-const QUICK_TAGS = [
-  "fake genius",
-  "low energy",
-  "sports fraud",
-  "coffee addict",
-  "thinks he's tough",
-  "bad dancer",
-  "fashion disaster",
-  "always late",
-  "crybaby",
-  "tiny country",
-  "plays tennis",
-  "bad hair",
-  "talks too much",
-  "loud chewer",
-  "thinks he's funny",
-  "amateur hour",
-];
-
 export interface Dossier {
   name: string;
   details: string;
@@ -45,15 +26,6 @@ export default function DossierForm({
     tags: [],
     intensity: 5,
   });
-
-  const toggleTag = (tag: string) => {
-    setDossier((d) => ({
-      ...d,
-      tags: d.tags.includes(tag)
-        ? d.tags.filter((t) => t !== tag)
-        : [...d.tags, tag],
-    }));
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -131,34 +103,6 @@ export default function DossierForm({
           className="w-full bg-paper border border-rule rounded px-3 py-2.5 text-sm text-ink outline-none focus:border-ink focus:ring-[3px] focus:ring-ink/8 resize-y placeholder:text-ink-mute"
         />
       </label>
-
-      {/* Quick tags */}
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between">
-          <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-ink-soft font-semibold">
-            Quick Tags
-          </span>
-          <span className="font-mono text-[10.5px] tracking-[0.16em] uppercase text-ink-mute">
-            {dossier.tags.length} selected
-          </span>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          {QUICK_TAGS.map((tag) => (
-            <button
-              key={tag}
-              type="button"
-              onClick={() => toggleTag(tag)}
-              className={`px-2.5 py-1.5 rounded-full border text-xs font-medium transition-colors cursor-pointer ${
-                dossier.tags.includes(tag)
-                  ? "bg-ink text-paper border-ink"
-                  : "bg-paper text-ink border-rule hover:bg-bone"
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-      </div>
 
       {/* Intensity slider */}
       <div className="flex flex-col gap-2">
