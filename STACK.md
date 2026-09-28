@@ -4,7 +4,7 @@ Satirical Trump-style roast tweet generator. Users enter friend details, app sea
 
 **Live:** https://trump-roast-lab.vercel.app
 **Repo:** https://github.com/keeltekool/trump-roast-lab
-**Last updated:** 2026-05-01
+**Last updated:** 2026-09-28
 
 ## Stack
 
@@ -12,7 +12,7 @@ Satirical Trump-style roast tweet generator. Users enter friend details, app sea
 |-------|------|
 | Framework | Next.js 16 |
 | Styling | Tailwind CSS + custom design tokens (ivory/navy/red/gold) |
-| AI | Claude API (Opus 4) via @anthropic-ai/sdk |
+| AI | Claude API (`claude-opus-5`, effort `max`) via @anthropic-ai/sdk |
 | Data | Static JSON — 2,808 filtered Trump posts bundled at build time |
 | Image export | html2canvas |
 | Hosting | Vercel |
@@ -29,7 +29,7 @@ Satirical Trump-style roast tweet generator. Users enter friend details, app sea
 
 - Dossier form: name, freeform details, inside jokes, intensity slider (1-10)
 - Keyword search across 2,808 Trump insult posts for style matching
-- Claude Opus 4 generates original Trump-style roast with nickname, ALL CAPS, signoffs
+- Claude Opus 5 (effort max) generates original Trump-style roast with nickname, ALL CAPS, signoffs
 - Pixel-perfect X/Twitter tweet card with profile photo, verified badge, engagement numbers
 - PNG export (parody label excluded from export)
 - Social sharing: native Web Share API, WhatsApp, X deep links
@@ -46,6 +46,6 @@ Satirical Trump-style roast tweet generator. Users enter friend details, app sea
 
 ## Gotchas
 
-- Claude Opus 4.6 model IDs not available on all API keys — using `claude-opus-4-20250514`
+- `claude-opus-4-20250514` was retired 15.06.2026 (generate 404ed until 28.09.2026). Opus 5 rejects `temperature`; effort is the only creativity knob. Thinking counts against `max_tokens` (16K keeps the SDK under its non-streaming limit)
 - Google Sheets CSV export URL returns 401 for this sheet — must use `gws` CLI for data fetching
 - html2canvas requires `useCORS: true` for the Trump profile image

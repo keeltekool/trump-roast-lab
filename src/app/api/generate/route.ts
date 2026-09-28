@@ -5,6 +5,9 @@ import { SYSTEM_PROMPT, buildUserMessage } from "@/lib/prompt";
 
 const anthropic = new Anthropic();
 
+// Opus 5 at max effort thinks before it writes; allow Vercel's 300 s ceiling.
+export const maxDuration = 300;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -19,8 +22,11 @@ export async function POST(req: NextRequest) {
     const matchedTexts = matches.map((m) => m.text);
 
     const message = await anthropic.messages.create({
-      model: "claude-opus-4-20250514",
-      max_tokens: 1024,
+      model: "claude-opus-5",
+      // Thinking counts against max_tokens. 16K keeps the SDK under its non-streaming limit.
+      max_tokens: 16000,
+      // Opus 5 rejects temperature; effort is the only creativity knob, max is its top.
+      output_config: { effort: "max" },
       system: SYSTEM_PROMPT,
       messages: [
         {
@@ -37,8 +43,13 @@ export async function POST(req: NextRequest) {
       ],
     });
 
-    const text =
-      message.content[0].type === "text" ? message.content[0].text : "";
+    const text = message.content.find((b) => b.type === "text")?.text ?? "";
+    if (!text) {
+      return NextResponse.json(
+        { error: `No roast came back (stop_reason: ${message.stop_reason}). Try again.` },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({
       text,
